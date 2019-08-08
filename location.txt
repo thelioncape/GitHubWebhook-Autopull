@@ -1,0 +1,2 @@
+/path/to/my/files
+Please replace the above text with the folder you wish to perform a git pull on
