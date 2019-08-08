@@ -27,7 +27,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		cmd = exec.Command("git pull")
+		cmd = exec.Command("git", "pull")
 		if err := cmd.Run(); err != nil {
 			log.Fatal(err)
 		}
