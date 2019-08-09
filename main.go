@@ -22,12 +22,9 @@ func main() {
 		s.Scan()
 		location := s.Text()
 
-		cmd := exec.Command("cd", location)
-		if err := cmd.Run(); err != nil {
-			log.Fatal(err)
-		}
+		cmd := exec.Command("git", "pull")
+		cmd.Dir = location
 
-		cmd = exec.Command("git", "pull")
 		if err := cmd.Run(); err != nil {
 			log.Fatal(err)
 		}
