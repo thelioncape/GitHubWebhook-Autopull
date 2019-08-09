@@ -8,9 +8,9 @@ import (
 	"os/exec"
 )
 
-// X52nqgk3wZG9A3oXa55mqLM71jJQPeRhMuVDC8Ua
-
 func main() {
+	var key string
+
 	wh := func(w http.ResponseWriter, _ *http.Request) {
 
 		f, err := os.Open("location.txt")
@@ -21,16 +21,15 @@ func main() {
 		s := bufio.NewScanner(f)
 		s.Scan()
 		location := s.Text()
+		s.Scan()
+		key = s.Text()
 
 		cmd := exec.Command("git", "pull")
 		cmd.Dir = location
-
-		if err := cmd.Run(); err != nil {
-			log.Fatal(err)
-		}
+		cmd.Run()
 	}
 
-	http.HandleFunc("/X52nqgk3wZG9A3oXa55mqLM71jJQPeRhMuVDC8Ua", wh)
+	http.HandleFunc("/"+key, wh)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
