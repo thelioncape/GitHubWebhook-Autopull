@@ -1,2 +1,3 @@
 /path/to/my/files
-Please replace the above text with the folder you wish to perform a git pull on
+ThisIsAReallyRandomStringToUseAsTheURL
+Please replace the above text with the folder you wish to perform a git pull on and place a random string to use as the webhook URL below it like shown above (e.g. 127.0.0.1:8080/ThisIsAReallyRandomStringToUseAsTheURL)
